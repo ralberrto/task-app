@@ -36,10 +36,13 @@ class TaskOverview extends React.Component {
 
   onTaskSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.target);
+    const form = e.target;
+    const data = new FormData(form);
     const newTask = {title: data.get('title'), date: new Date()};
     const tasks = [...this.state.tasks].concat(newTask);
     this.setState({tasks: tasks});
+
+    form.reset();
   }
 
   render() {
