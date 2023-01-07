@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TaskList from './components/Overview';
+import { TaskForm, TaskList } from './components/Overview';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,6 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <TaskForm />
         <TaskList tasks={this.state.tasks}/>
       </div>
     );
