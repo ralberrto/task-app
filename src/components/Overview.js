@@ -2,9 +2,9 @@ import React from 'react';
 
 class TaskList extends React.Component {
   render() {
-    const tasks = this.props.tasks.map((task) => {
+    const tasks = this.props.tasks.map((task, index) => {
       return (
-        <li className='task'>{task.title}</li>
+        <li key={index} className='task'>{task.title}</li>
       );
     });
     return (
