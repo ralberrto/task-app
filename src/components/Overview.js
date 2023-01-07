@@ -44,23 +44,12 @@ class TaskOverview extends React.Component {
 }
 
 class TaskForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      taskInput: '',
-    }
-  }
-
-  handleChange(e) {
-    this.setState({taskInput: e.target.value});
-  }
 
   render() {
     return (
       <form>
         <label htmlFor='add-task'>Add Taks</label>
-        <input id='add-task' type='text' value={this.state.taskInput} onChange={this.handleChange}/>
+        <input id='add-task' type='text' required />
         <input type='submit' value='Submit' />
       </form>
     );
