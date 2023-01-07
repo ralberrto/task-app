@@ -1,10 +1,10 @@
 import './App.css';
-import Task from './components/Overview';
+import TaskList from './components/Overview';
 
 function App() {
   return (
     <div className="App">
-      <Task planet='Earth'/>
+      <TaskList />
     </div>
   );
 }

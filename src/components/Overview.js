@@ -3,9 +3,19 @@ import React from 'react';
 class Task extends React.Component {
   render() {
     return (
-      <h1 className="test">Hello, planet {this.props.planet}</h1>
+      <li className="test">Hello, planet {this.props.planet}</li>
     );
   }
 }
 
-export default Task
+class TaskList extends React.Component {
+  render() {
+    return (
+      <ul className='task-list'>
+        <Task planet='Mars' />
+      </ul>
+    );
+  }
+}
+
+export default TaskList
