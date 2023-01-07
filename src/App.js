@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <TaskList />
+        <TaskList tasks={this.state.tasks}/>
       </div>
     );
   }
