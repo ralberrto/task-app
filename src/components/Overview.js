@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 
 class TaskOverview extends React.Component {
   constructor(props) {
@@ -8,27 +9,33 @@ class TaskOverview extends React.Component {
       tasks: [
         {
           title: 'Check the terminal of the car\'s battery',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         },
         {
           title: 'Do purchases checklist',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         },
         {
           title: 'Get money from the bank',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         },
         {
           title: 'Actually make purchases',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         },
         {
           title: 'Ship purchases',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         },
         {
           title: 'Make customer\'s receipt',
-          date: new Date()
+          date: new Date(),
+          id: uniqid(),
         }
       ],
     };
@@ -38,7 +45,7 @@ class TaskOverview extends React.Component {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-    const newTask = {title: data.get('title'), date: new Date()};
+    const newTask = {title: data.get('title'), date: new Date(), id: uniqid()};
     const tasks = [...this.state.tasks].concat(newTask);
     this.setState({tasks: tasks});
 
@@ -70,9 +77,9 @@ class TaskForm extends React.Component {
 
 class TaskList extends React.Component {
   render() {
-    const tasks = this.props.tasks.map((task, index) => {
+    const tasks = this.props.tasks.map((task) => {
       return (
-        <li key={index} className='task'>{task.title}</li>
+        <li key={task.id} className='task'>{task.title}</li>
       );
     });
     return (
