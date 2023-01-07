@@ -1,5 +1,48 @@
 import React from 'react';
 
+class TaskOverview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tasks: [
+        {
+          title: 'Check the terminal of the car\'s battery',
+          date: new Date()
+        },
+        {
+          title: 'Do purchases checklist',
+          date: new Date()
+        },
+        {
+          title: 'Get money from the bank',
+          date: new Date()
+        },
+        {
+          title: 'Actually make purchases',
+          date: new Date()
+        },
+        {
+          title: 'Ship purchases',
+          date: new Date()
+        },
+        {
+          title: 'Make customer\'s receipt',
+          date: new Date()
+        }
+      ],
+    };
+  }
+
+  render() {
+    return (
+      <div id='task-overview'>
+        <TaskForm />
+        <TaskList tasks={this.state.tasks} />
+      </div>
+    );
+  }
+}
+
 class TaskForm extends React.Component {
   render() {
     return (
@@ -27,4 +70,4 @@ class TaskList extends React.Component {
   }
 }
 
-export { TaskForm, TaskList };
+export default TaskOverview;
