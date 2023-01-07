@@ -60,7 +60,7 @@ class TaskForm extends React.Component {
     return (
       <form>
         <label htmlFor='add-task'>Add Taks</label>
-        <input id='add-task' type='text' onChange={this.handleChange} />
+        <input id='add-task' type='text' value={this.state.taskInput} onChange={this.handleChange}/>
         <input type='submit' value='Submit' />
       </form>
     );
